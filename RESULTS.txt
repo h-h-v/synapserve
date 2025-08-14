@@ -1,0 +1,113 @@
+                                            ACCURACY_SCORE_TABLE, P=1
+  |MEAN               |INTERPOLATION      |DROP               |MEDIAN             |MODE               |
+LR|0.6277482269503546 |0.6388745482705214 |0.6391843971631206 |0.6432624113475177 |0.6392730496453901 |
+RF|0.6963652482269503 |0.6987609705730511 |0.6911347517730496 |0.6945035460992908 |0.6908687943262412 | 
+DT|0.6851950354609929 |0.6923076923076923 |0.6937943262411348 |0.6893617021276596 |0.6938829787234042 | 
+GB|0.6911347517730496 |0.7002237136465325 |0.6940602836879433 |0.6920212765957446 |0.7007978723404256 |
+
+                                            ACCURACY_SCORE_TABLE, P=2
+  |MEAN               |INTERPOLATION      |DROP               |MEDIAN             |MODE               |
+LR|0.638031914893617  |0.6376699363276545 |0.6436170212765957 |0.6266843971631205 |0.6306737588652482 |
+RF|0.7063829787234043 |0.7098606091894683 |0.7031028368794326 |0.7046985815602836 |0.7007978723404256 | 
+DT|0.7032801418439716 |0.7129581827568404 |0.7078014184397163 |0.7029255319148936 |0.7077127659574468 | 
+GB|0.7103723404255319 |0.7092583032180347 |0.7059397163120568 |0.7069148936170213 |0.7047872340425532 |
+
+                                            ACCURACY_SCORE_TABLE, P=3 LATEST
+  |MEAN               |INTERPOLATION      |DROP               |MEDIAN             |MODE               |
+LR|0.9830673758865248 |0.9838237824815006 |0.9833333333333333 |0.9843971631205674 |0.9837765957446809 |
+
+
+RF|0.8690602836879433 |0.8662880743417656 |0.8684397163120567 |0.8668439716312056 |0.8721631205673759 | 
+DT|0.8725177304964539 |0.8696437790397522 |0.8703900709219858 |0.872872340425532  |0.8713652482269504 | 
+GB|0.8382978723404255 |0.8385819996558251 |0.8513297872340425 |0.8492021276595745 |0.8540780141843972 |
+
+Category
+CI_Name
+CI_Subcat
+KB_number
+CI_Cat
+WBS
+Incident_ID
+
+ Priority             1.000000
+Impact               0.993035
+Urgency              0.757817
+Category             0.407173
+Closure_Code          0.122447
+No_of_Reassignments  0.091662
+CI_NAME              0.078862
+Handle_Time          0.072911
+CI_CAT               0.060691
+CI_SUBCAT            0.051543
+KB_number            0.049023
+WBS                  0.039543
+Resolved_Time        0.038654
+Reopen_Time          0.025231
+rela_change          0.024582
+INCIDENT_ID          0.025417
+Status               0.017179
+Close_Time           0.003208
+number_cnt           0.002872
+Open_Time            0.002366
+no_related_int       0.000402
+dtype: float64
+
+0.07>x>0.02
+
+High Correlation Features (x > 0.07):
+Impact (0.993035)
+Urgency (0.757817)
+Category (0.407173)--1
+Closure_Code (0.122447)
+No_of_Reassignments (0.091662)
+CI_NAME (0.078862)--2
+Handle_Time (0.072911)
+Medium Correlation Features (0.07 >= x > 0.02):
+CI_CAT (0.060691)--3
+CI_SUBCAT (0.051543)--4
+KB_number (0.049023)
+WBS (0.039543)
+Resolved_Time (0.038654)
+Reopen_Time (0.025231)
+INCIDENT_ID (0.025417)
+rela_change (0.024582)
+Low Correlation Features (x <= 0.02):
+Status (0.017179)
+Close_Time (0.003208)
+number_cnt (0.002872)
+Open_Time (0.002366)
+no_related_int (0.000402)
+
+            Category   CI_Name    CI_Cat  CI_Subcat
+Category   1.000000  0.071831  0.105864   0.030295
+CI_Name    0.071831  1.000000  0.168835   0.955526
+CI_Cat     0.105864  0.168835  1.000000   0.199420
+CI_Subcat  0.030295  0.955526  0.199420   1.000000
+
+Category (0.407173)--1
+CI_NAME (0.078862)--2------
+CI_CAT (0.060691)--3      |---HIGH CORRELATION REMOVE CI_SUBCAT
+CI_SUBCAT (0.051543)--4----
+
+Category (0.407173)--1
+CI_NAME (0.078862)--2
+CI_CAT (0.060691)--3
+
+Related_Change             -0.032309 -0.009807  -0.034021  0.024199
+Related_Change                 0.062802  0.001342  0.024405  0.032293
+Related_Change              0.024582    0.001289  0.034027   0.013111
+Related_Change                       NaN             0.007342   0.033289
+Related_Change                 0.006110       0.046260    0.047503
+Related_Change                    -0.006778     -0.035842
+Related_Change                               -0.005056                  NaN
+Related_Change                             0.031307               0.864409
+No_of_Related_Changes,Incident_ID,Impact,Urgency,Open_Time,Resolved_Time,Close_Time
+
+No_of_Related_Changes
+Related_Change 0.864409
+Category 0.038524
+No_of_Related_Incidents 0.034501
+---
+KB_number 0.020844
+---
+WBS 0.014323 0.002090 0.064007
